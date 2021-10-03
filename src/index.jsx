@@ -5,18 +5,26 @@ import Home from './pages/Home'
 import Survey from './pages/Survey'
 import Header from './components/Header'
 import reportWebVitals from './reportWebVitals'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Header />
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/survey">
-        <Survey />
-      </Route>
+      <h2>Page principale à la racine</h2>
+      <Switch>
+        <Route path="/admin">
+          <h3>Page admin</h3>
+        </Route>
+        <Route path="/">
+          <Header />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/survey">
+            <Survey />
+          </Route>
+        </Route>
+      </Switch>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
