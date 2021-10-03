@@ -4,8 +4,8 @@ function Header() {
   return (
     <nav>
       <Link to="/">Accueil</Link>
-      <Link to="/survey">Questionnaire</Link>
-      <Link to="/survey/42">Questionnaire42</Link>
+      <Link to="/freelances">Freelances</Link>
+      <Link to="/survey/1">Questionnaire</Link>
     </nav>
   )
 }
