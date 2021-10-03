@@ -4,25 +4,23 @@ import './index.css'
 import Home from './pages/Home'
 import Survey from './pages/Survey'
 import Header from './components/Header'
+import Error from './components/Error'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <h2>Page principale à la racine</h2>
+      <Header />
       <Switch>
-        <Route path="/admin">
-          <h3>Page admin</h3>
+        <Route exact path="/">
+          <Home />
         </Route>
-        <Route path="/">
-          <Header />
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/survey/:questionNumber">
-            <Survey />
-          </Route>
+        <Route path="/survey/:questionNumber">
+          <Survey />
+        </Route>
+        <Route>
+          <Error />
         </Route>
       </Switch>
     </Router>
