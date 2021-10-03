@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import Home from './pages/Home'
 import Survey from './pages/Survey'
+import Header from './components/Header'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <Header />
       <Route exact path="/">
         <Home />
       </Route>
